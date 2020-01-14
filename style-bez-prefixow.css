@@ -6,14 +6,24 @@
     }
 
     50% {
-        height: 50vh;
+        height: 40vh;
         width: 100vw;
         opacity:1;
     }
     100% {
-        height: 50vh;
+        height: 40vh;
         opacity:0;
         width: 0;
+    }
+}
+
+@keyframes Dotted {
+    0% {
+        opacity:0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
@@ -49,7 +59,7 @@ body {
     height: 100vh;
     background-color: rgb(255, 255, 255);
     animation: Fade 1.3s ease;
-    animation-delay: .7s;
+    animation-delay: 1.3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
@@ -60,6 +70,21 @@ body {
     font-size: 6em;
     color: rgba(0, 0, 0, 0.3);
     z-index: 9999;
+}
+
+.welcome__dot {
+    opacity: 0;
+    animation: Dotted .5s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.welcome__dot--1 {
+    animation-delay: .3s;
+}
+
+.welcome__dot--2 {
+    animation-delay: .8s;
 }
 
 
@@ -219,6 +244,7 @@ body {
     width: 100%;
     display: block;
     min-height: 100vh;
+    background-image: url('img/grain.png');
     background-color: rgb(255, 255, 255);
     transition: all 300ms linear;
     z-index: 10;
