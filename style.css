@@ -58,7 +58,7 @@ body {
     text-align: center;
 }
 
-.welcome {
+/* .welcome {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -82,7 +82,7 @@ body {
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
 
-}
+} */
 
 .welcome__text {
     font-family: 'Mansalva', cursive;
