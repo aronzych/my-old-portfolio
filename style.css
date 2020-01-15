@@ -6,12 +6,12 @@
     }
 
     50% {
-        height: 40vh;
+        height: 50vh;
         width: 100vw;
         opacity:1;
     }
     100% {
-        height: 40vh;
+        height: 50vh;
         opacity:0;
         width: 0;
     }
@@ -23,12 +23,12 @@
     }
 
     50% {
-        height: 40vh;
+        height: 50vh;
         width: 100vw;
         opacity:1;
     }
     100% {
-        height: 40vh;
+        height: 50vh;
         opacity:0;
         width: 0;
     }
@@ -104,7 +104,7 @@ body {
     z-index: 100;
     width: 100vw;
     height: 100vh;
-    background-image: url('img/grain.png');
+    /* background-image: url('img/grain.png'); */
     background-color: rgb(255, 255, 255);
     -webkit-animation: Fade 1.3s ease;
             animation: Fade 1.3s ease;
@@ -289,7 +289,7 @@ body {
 
 /* section close buttons */
 .close-button {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     width: 30px;
@@ -313,6 +313,46 @@ body {
             transform: rotate(90deg);
 }
 
+/* gallery section gallery.html */
+
+.gallery {
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: top right;
+        -ms-transform-origin: top right;
+            transform-origin: top right;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    min-height: 100vh;
+    /* background-image: url('img/grain.png'); */
+    background-color: rgb(255, 255, 255);
+    -webkit-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    transition: all 300ms linear;
+    z-index: 10;
+}
+
+.gallery__grid {
+
+    margin: 60px auto 0px auto;
+    max-width:1200px;
+    padding:0 1rem;
+  }
+
+  .gallery__img{
+    display:block;
+    max-width:100%;
+  }
+  .gallery__cell{
+    margin:1rem;
+  }
+
+
 
 /* about section */
 .about {
@@ -329,7 +369,7 @@ body {
     width: 100%;
     display: block;
     min-height: 100vh;
-    background-image: url('img/grain.png');
+    /* background-image: url('img/grain.png'); */
     background-color: rgb(255, 255, 255);
     -webkit-transition: all 300ms linear;
     -o-transition: all 300ms linear;
@@ -453,9 +493,25 @@ body {
     height: 100%;
 }
 
+.projects__info {
+    position: absolute;
+    display: block;
+    bottom: 3px;
+    right: 3px;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.8);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
 .projects__item:hover .projects__overlay {
     opacity: 1;
     z-index: 13;
+}
+
+.projects__item:hover .projects__info {
+    opacity: 0;
 }
 
 .projects__overlay {
@@ -517,6 +573,10 @@ body {
 	background:rgb(70, 70, 70);
 }
 
+.projects__item--gallery {
+    background-image: url('img/gallery.jpg');
+}
+
 .projects__item--marzeniekulinarne {
     background-image: url('img/marzenie.jpg');
 }
@@ -525,8 +585,8 @@ body {
     background-image: url('img/adeon.jpg');
 }
 
-.projects__item--terminarze {
-    background-image: url('img/terminarze.jpg');
+.projects__item--gallery {
+    background-image: url('img/gallery.jpg');
 }
 
 .projects__item--china {
@@ -610,7 +670,6 @@ body {
     }
 
 
-
     .projects__item {
         border: 20px solid white;
         border-bottom: 70px solid white;
@@ -619,10 +678,31 @@ body {
         height: 450px;
         margin: 10px 10px;
     }
+
+/* gallery section gallery.html */
+
+.gallery__grid {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:row;
+            flex-direction:row;
+  }
+
+  .gallery__cell {
+    width:calc(50% - 2rem);
+  }
+
 }
 
 
 @media (min-width:1400px) {
+
+    /* portfolio section */
 
     .portfolio__head {
         right: 220px;
@@ -641,5 +721,10 @@ body {
         margin-bottom: 50px;
     }
 
-    
-}
+    /* gallery section gallery.html */
+
+  
+  .gallery__cell {
+        width:calc(100%/3 - 2rem);
+      }
+  }
